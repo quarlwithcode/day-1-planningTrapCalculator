@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning Trap Calculator - Stop Planning, Start Shipping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Planning Trap Calculator</h1>
+            <p class="subtitle">Discover how much perfectionism is costing you</p>
+        </header>
+
+        <main>
+            <div class="calculator-card">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="hourlyRate">Your Hourly Rate ($)</label>
+                        <input type="number" id="hourlyRate" placeholder="75" min="0" step="5">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="planningDuration">How long have you been planning?</label>
+                        <select id="planningDuration">
+                            <option value="1">1 week</option>
+                            <option value="2">2 weeks</option>
+                            <option value="4">1 month</option>
+                            <option value="8">2 months</option>
+                            <option value="12">3 months</option>
+                            <option value="24">6 months</option>
+                            <option value="52">1 year</option>
+                            <option value="104">2 years</option>
+                            <option value="custom">Custom...</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" id="customWeeksGroup" style="display: none;">
+                        <label for="customWeeks">Number of weeks</label>
+                        <input type="number" id="customWeeks" placeholder="10" min="1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="hoursPerWeek">Hours spent planning per week</label>
+                        <input type="number" id="hoursPerWeek" placeholder="20" value="20" min="1" max="168">
+                    </div>
+
+                    <button id="calculateBtn" class="calculate-btn">Calculate My Planning Debt</button>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-container">
+                        <div class="progress-label">Planning Prison: <span id="progressPercentage">0%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section" id="resultsSection">
+                    <div class="result-item direct-cost">
+                        <span class="result-label">Direct Cost (Time × Rate)</span>
+                        <span class="result-value" id="directCost">$0</span>
+                    </div>
+
+                    <div class="result-item opportunity-cost">
+                        <span class="result-label">Opportunity Cost (Lost Revenue)</span>
+                        <span class="result-value" id="opportunityCost">$0</span>
+                    </div>
+
+                    <div class="result-divider"></div>
+
+                    <div class="result-item total-damage">
+                        <span class="result-label">Total Planning Damage</span>
+                        <span class="result-value pulse" id="totalDamage">$0</span>
+                    </div>
+
+                    <div class="result-item products-lost">
+                        <span class="result-label">Products You Could've Built</span>
+                        <span class="result-value" id="productsLost">0</span>
+                    </div>
+
+                    <div class="insight-box">
+                        <p id="insightText">Stop planning. Start shipping.</p>
+                    </div>
+                </div>
+
+                <div class="share-section" id="shareSection">
+                    <h3>Share Your Reality Check</h3>
+                    <div class="share-buttons">
+                        <button class="share-btn linkedin" id="shareLinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            Share on LinkedIn
+                        </button>
+                        <button class="share-btn twitter" id="shareTwitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                            Share on X
+                        </button>
+                        <button class="share-btn copy" id="copyResult">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            Copy Result
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Ready to Break Free?</h2>
+                    <p>Stop the analysis paralysis. Ship something real in just one day.</p>
+                    <a href="#" class="cta-btn" id="bookSparkSprint">
+                        Book Your Spark Sprint
+                        <span class="cta-arrow">→</span>
+                    </a>
+                    <p class="cta-subtitle">Turn your perfect plan into an imperfect product that actually exists</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built in a day, not planned for months.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
