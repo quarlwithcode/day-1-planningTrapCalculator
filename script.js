@@ -185,7 +185,7 @@ class PlanningTrapCalculator {
     shareOnLinkedIn() {
         if (!this.currentResults) return;
         
-        const shareUrl = 'https://vnq-day-1-planningTrapCalculator.vercel.app';
+        const shareUrl = 'https://vnq-day-1-planningtrapcalculator.vercel.app';
         const text = `I just discovered I've lost $${this.formatNumber(Math.round(this.currentResults.totalDamage))} to perfectionism and over-planning. 
 
 That's ${this.currentResults.productsBuilt} products I could've built instead of planning the "perfect" one.
@@ -206,7 +206,7 @@ Calculate your planning debt: ${shareUrl}
     shareOnTwitter() {
         if (!this.currentResults) return;
         
-        const shareUrl = 'https://vnq-day-1-planningTrapCalculator.vercel.app';
+        const shareUrl = 'https://vnq-day-1-planningtrapcalculator.vercel.app';
         const text = `I've lost $${this.formatNumber(Math.round(this.currentResults.totalDamage))} to overthinking and perfectionism.
 
 That's ${this.currentResults.productsBuilt} products I never built.
